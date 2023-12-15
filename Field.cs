@@ -40,7 +40,7 @@ internal class Field
             target = random.Next(0, 25);
         }
         while (target == robot);
-        result[target] = '4';
+            result[target] = '4';
         return result.ToString();
     }
 }

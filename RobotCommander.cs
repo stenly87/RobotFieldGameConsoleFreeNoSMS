@@ -21,6 +21,7 @@ internal class RobotCommander : ICommander
                 case 2: robotCommands.Enqueue(new MoveRobotDownCommand()); break;
                 case 3: robotCommands.Enqueue(new MoveRobotLeftCommand()); break;
                 case 4: robotCommands.Enqueue(new MoveRobotRightCommand()); break;
+                case 5: robotCommands.Enqueue(new PayToWinCommand()); break;
             }
             robotCommands.Enqueue(new DrawRobotCommand());
         }
@@ -43,6 +44,11 @@ internal class RobotCommander : ICommander
                 command.Execute();
             }
         }
+
+        Console.WriteLine("Здесь могла бы быть ваша реклама");
+        Console.SetCursorPosition(0, 0);
+        Console.WriteLine(new string(' ', 20));
+        Console.WriteLine("тут тоже реклама");
     }
 }
 
