@@ -12,6 +12,19 @@ internal class RobotCommander : ICommander
 
     public void Execute(int[] value)
     {
+        for(int i  = 0; i < value.Length; i++)
+        {
+            robotCommands.Enqueue(new ClearRobotCommand());
+            switch (value[i])
+            {
+                case 1: robotCommands.Enqueue(new MoveRobotUpCommand()); break;
+                case 2: robotCommands.Enqueue(new MoveRobotDownCommand()); break;
+                case 3: robotCommands.Enqueue(new MoveRobotLeftCommand()); break;
+                case 4: robotCommands.Enqueue(new MoveRobotRightCommand()); break;
+            }
+            robotCommands.Enqueue(new DrawRobotCommand());
+        }
+
         // массив value перебирается сначала до конца
         // на каждую цифру создается соответствующая команда
         // и передается в очередь выполнения команд
@@ -23,7 +36,7 @@ internal class RobotCommander : ICommander
     {
         while (!Field.GetInstance().CheckRobotEndGame(Robot.GetInstance())) 
         {
-            Thread.Sleep(1000);
+            Thread.Sleep(200);
             if (robotCommands.Count > 0)
             {
                 var command = robotCommands.Dequeue();
