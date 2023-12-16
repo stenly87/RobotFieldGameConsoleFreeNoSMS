@@ -47,7 +47,9 @@ internal class RobotCommander : ICommander
 
         Console.WriteLine("Здесь могла бы быть ваша реклама");
         Console.SetCursorPosition(0, 0);
-        Console.WriteLine(new string(' ', 20));
+        Console.WriteLine(new string(' ', 30));
+        Console.WriteLine(new string(' ', 30));
+        Console.WriteLine(new string(' ', 30));
         Console.WriteLine("тут тоже реклама");
     }
 }
