@@ -32,8 +32,6 @@ internal class FieldCommander : ICommander
                         Robot.GetInstance().Y = j;
                         break;
                     case 4: brush = Brushes.Red;
-                        Field.GetInstance().TargetX = i;
-                        Field.GetInstance().TargetY = j;
                         break;
                 }
                 paint.DrawRectangle(brush, i, j);

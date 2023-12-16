@@ -7,6 +7,4 @@ while (true)
 {
     controller.StartListner();
     Field.GetInstance().Cells = null;
-    Field.GetInstance().TargetY = -1;
-
 }

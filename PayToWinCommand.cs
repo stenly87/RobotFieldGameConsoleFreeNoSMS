@@ -8,8 +8,16 @@ internal class PayToWinCommand : IRobotCommand
         Robot robot = Robot.GetInstance();
         Field field = Field.GetInstance();
 
-        robot.X = field.TargetX;
-        robot.Y = field.TargetY;
+        for (int i = 0; i < 5; i++)
+            for (int j = 0; j < 5; j++)
+            {
+                if (field.Cells[i, j] == 4)
+                {
+                    robot.X = i;
+                    robot.Y = j;
+                    break;
+                }
+            }
     }
 }
 

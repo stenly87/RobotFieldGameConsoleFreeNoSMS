@@ -15,12 +15,9 @@ internal class Field
 
     public int[,] Cells { get; set; }
 
-    public int TargetX { get; set; }
-    public int TargetY { get; set; }
-
     internal bool CheckRobotEndGame(Robot robot)
     {
-        return robot.X == TargetX && robot.Y == TargetY;
+        return Cells[robot.X, robot.Y] == 4;
         // сравнение координат робота с координатами
         // финишной точки
     }
@@ -35,12 +32,12 @@ internal class Field
 
         int target = 0, robot = random.Next(0, 25);
         result[robot] = '3';
-        do 
+        do
         {
             target = random.Next(0, 25);
         }
         while (target == robot);
-            result[target] = '4';
+        result[target] = '4';
         return result.ToString();
     }
 }
